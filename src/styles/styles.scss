@@ -224,13 +224,17 @@ ul#socialLinks {
 
 .wideBody {
   margin-bottom: 30px;
-  padding: 20px 26px;
+  padding: 20px 26px 10px;
   background-color: rgba(232, 239, 245, 0.05);
   border-radius: 12px;
+
+  p {
+    margin: 16px 0;
+  }
 }
 
 .homeActions {
-  margin-top: 12px;
+  margin: 12px 0 16px;
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
@@ -259,7 +263,7 @@ ul#socialLinks {
 
 .thinBody {
   margin-bottom: 30px;
-  padding: 20px 26px 12px 26px;
+  padding: 20px 26px 10px;
   background-color: rgba(240, 244, 248, 0.05);
   border-radius: 12px;
 
@@ -268,8 +272,8 @@ ul#socialLinks {
   }
 
   ul.square {
-    margin: 10px 0 0 16px;
-    padding: 0 0 19px 0;
+    margin: 16px 0 16px 16px;
+    padding: 0;
     list-style: square;
     line-height: 22px;
   }
@@ -669,7 +673,7 @@ div.slide_item {
     text-align: center;
   }
   .wideBody ul.square {
-    margin: 10px 0 0 26px;
+    margin: 16px 0 16px 16px;
     padding: 0;
     list-style: square;
     line-height: 22px;

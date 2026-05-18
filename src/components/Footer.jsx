@@ -1,6 +1,7 @@
 import { lastCommitTime } from "../data/buildInfo";
 
 function Footer() {
+  const currentYear = new Date().getFullYear();
   const dateText = lastCommitTime.toLocaleDateString("en-US", {
     month: "long",
     day: "numeric",
@@ -13,21 +14,7 @@ function Footer() {
 
   return (
     <footer id="footer">
-      <p>
-        Copyright &copy; {lastCommitTime.getFullYear()} Justin Hayes &bull;
-        Valid{" "}
-        <a href="https://validator.w3.org/" target="_blank" rel="noreferrer">
-          XHTML
-        </a>{" "}
-        |{" "}
-        <a
-          href="https://jigsaw.w3.org/css-validator/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          CSS
-        </a>
-      </p>
+      <p>Copyright &copy; {currentYear} Justin Hayes</p>
       <p>
         Last updated on {dateText} {timeText}
       </p>
