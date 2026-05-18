@@ -1,11 +1,12 @@
+import { lastCommitTime } from "../data/buildInfo";
+
 function Footer() {
-  const now = new Date();
-  const dateText = now.toLocaleDateString("en-US", {
+  const dateText = lastCommitTime.toLocaleDateString("en-US", {
     month: "long",
     day: "numeric",
     year: "numeric",
   });
-  const timeText = now.toLocaleTimeString("en-US", {
+  const timeText = lastCommitTime.toLocaleTimeString("en-US", {
     hour: "2-digit",
     minute: "2-digit",
   });
@@ -13,7 +14,8 @@ function Footer() {
   return (
     <footer id="footer">
       <p>
-        Copyright &copy; {now.getFullYear()} Justin Hayes &bull; Valid{" "}
+        Copyright &copy; {lastCommitTime.getFullYear()} Justin Hayes &bull;
+        Valid{" "}
         <a href="https://validator.w3.org/" target="_blank" rel="noreferrer">
           XHTML
         </a>{" "}
