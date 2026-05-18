@@ -4,6 +4,7 @@ import { resolve } from "node:path";
 
 const SITE_URL = "https://justinbhayes.com";
 const OUTPUT_PATH = resolve("public", "sitemap.xml");
+const BUILD_INFO_PATH = resolve("src", "data", "buildInfo.js");
 
 const routes = [
   { path: "/", source: "src/pages/HomePage.jsx" },
@@ -18,6 +19,14 @@ function getGitDate(targetPath) {
       ? `git log -1 --format=%cs -- "${targetPath}"`
       : "git log -1 --format=%cs";
     return execSync(command, { encoding: "utf8" }).trim();
+  } catch {
+    return "";
+  }
+}
+
+function getGitIsoDate() {
+  try {
+    return execSync("git log -1 --format=%aI", { encoding: "utf8" }).trim();
   } catch {
     return "";
   }
@@ -47,3 +56,13 @@ const sitemap = [
 
 writeFileSync(OUTPUT_PATH, sitemap, "utf8");
 console.log(`Generated ${OUTPUT_PATH}`);
+
+const lastCommitIso = getGitIsoDate() || new Date().toISOString();
+const buildInfo = [
+  "// Last git commit timestamp - updated automatically by scripts/generate-sitemap.mjs",
+  `export const lastCommitTime = new Date(\"${lastCommitIso}\");`,
+  "",
+].join("\n");
+
+writeFileSync(BUILD_INFO_PATH, buildInfo, "utf8");
+console.log(`Generated ${BUILD_INFO_PATH}`);

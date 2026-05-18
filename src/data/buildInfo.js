@@ -1,2 +1,2 @@
-// Last git commit timestamp - updated at build time
-export const lastCommitTime = new Date("2026-05-18T08:59:17-05:00");
+// Last git commit timestamp - updated automatically by scripts/generate-sitemap.mjs
+export const lastCommitTime = new Date("2026-05-18T12:53:33-05:00");
