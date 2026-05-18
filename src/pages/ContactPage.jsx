@@ -1,6 +1,7 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import Layout from "../components/Layout";
+import Seo from "../components/Seo";
 
 // Initialize EmailJS
 // Get your credentials from https://dashboard.emailjs.com/
@@ -59,124 +60,132 @@ function ContactPage() {
   };
 
   return (
-    <Layout intro="If you have any questions or comments, feel free to use the form below to contact me.">
-      <section className="wideBody panel-elevated">
-        <h2>Contact Me</h2>
-        {note && (
-          <div id="note" className="notification_ok">
-            {note}
+    <>
+      <Seo
+        title="Contact"
+        description="Contact Justin B Hayes about front-end development, web management, freelance work, and collaboration opportunities."
+        path="/contact"
+        image="/assets/i/justin.jpg"
+      />
+      <Layout intro="If you have any questions or comments, feel free to use the form below to contact me.">
+        <section className="wideBody panel-elevated">
+          <h2>Contact Me</h2>
+          {note && (
+            <div id="note" className="notification_ok">
+              {note}
+            </div>
+          )}
+          {error && (
+            <div id="error" className="notification_error">
+              {error}
+            </div>
+          )}
+          <div id="fields" className="container-fluid p-0">
+            <form onSubmit={onSubmit}>
+              <fieldset className="border-0 m-0 p-0">
+                <legend className="visually-hidden">Contact form</legend>
+
+                <div className="row g-md-3 align-items-start">
+                  <div className="col-12 col-md-4">
+                    <label
+                      htmlFor="name"
+                      className="form-label d-block mb-0 py-2 text-md-end"
+                    >
+                      Name:
+                    </label>
+                  </div>
+                  <div className="col-12 col-md-4 me-4">
+                    <input
+                      id="name"
+                      name="name"
+                      type="text"
+                      className="form-control"
+                      value={formData.name}
+                      onChange={onChange}
+                      required
+                    />
+                  </div>
+
+                  <div className="col-12 col-md-4">
+                    <label
+                      htmlFor="email"
+                      className="form-label d-block mb-0 py-2 text-md-end"
+                    >
+                      Email:
+                    </label>
+                  </div>
+                  <div className="col-12 col-md-4 me-4">
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      className="form-control"
+                      value={formData.email}
+                      onChange={onChange}
+                      required
+                    />
+                  </div>
+
+                  <div className="col-12 col-md-4">
+                    <label
+                      htmlFor="subject"
+                      className="form-label d-block mb-0 py-2 text-md-end"
+                    >
+                      Subject:
+                    </label>
+                  </div>
+                  <div className="col-12 col-md-4 me-4">
+                    <select
+                      id="subject"
+                      name="subject"
+                      className="form-select"
+                      value={formData.subject}
+                      onChange={onChange}
+                    >
+                      <option value="General Inquiry">General Inquiry</option>
+                      <option value="Request a Quote">Request a Quote</option>
+                      <option value="Report a Bug">Report a Bug</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+
+                  <div className="col-12 col-md-4">
+                    <label
+                      htmlFor="message"
+                      className="form-label d-block mb-0 py-2 text-md-end"
+                    >
+                      Message:
+                    </label>
+                  </div>
+                  <div className="col-12 col-md-4 me-4">
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows="6"
+                      className="form-control"
+                      value={formData.message}
+                      onChange={onChange}
+                      required
+                    ></textarea>
+                  </div>
+
+                  <div className="col-12 col-md-8 offset-md-4">
+                    <button
+                      name="submit"
+                      type="submit"
+                      className="btn btn-primary"
+                      disabled={loading}
+                    >
+                      {loading ? "Submitting..." : "Submit"}
+                    </button>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
           </div>
-        )}
-        {error && (
-          <div id="error" className="notification_error">
-            {error}
-          </div>
-        )}
-        <div id="fields" className="container-fluid p-0">
-          <form onSubmit={onSubmit}>
-            <fieldset className="border-0 m-0 p-0">
-              <legend className="visually-hidden">Contact form</legend>
-
-              <div className="row g-md-3 align-items-start">
-                <div className="col-12 col-md-4">
-                  <label
-                    htmlFor="name"
-                    className="form-label d-block mb-0 py-2 text-md-end"
-                  >
-                    Name:
-                  </label>
-                </div>
-                <div className="col-12 col-md-4 me-4">
-                  <input
-                    id="name"
-                    name="name"
-                    type="text"
-                    className="form-control"
-                    value={formData.name}
-                    onChange={onChange}
-                    required
-                  />
-                </div>
-
-                <div className="col-12 col-md-4">
-                  <label
-                    htmlFor="email"
-                    className="form-label d-block mb-0 py-2 text-md-end"
-                  >
-                    Email:
-                  </label>
-                </div>
-                <div className="col-12 col-md-4 me-4">
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    className="form-control"
-                    value={formData.email}
-                    onChange={onChange}
-                    required
-                  />
-                </div>
-
-                <div className="col-12 col-md-4">
-                  <label
-                    htmlFor="subject"
-                    className="form-label d-block mb-0 py-2 text-md-end"
-                  >
-                    Subject:
-                  </label>
-                </div>
-                <div className="col-12 col-md-4 me-4">
-                  <select
-                    id="subject"
-                    name="subject"
-                    className="form-select"
-                    value={formData.subject}
-                    onChange={onChange}
-                  >
-                    <option value="General Inquiry">General Inquiry</option>
-                    <option value="Request a Quote">Request a Quote</option>
-                    <option value="Report a Bug">Report a Bug</option>
-                    <option value="Other">Other</option>
-                  </select>
-                </div>
-
-                <div className="col-12 col-md-4">
-                  <label
-                    htmlFor="message"
-                    className="form-label d-block mb-0 py-2 text-md-end"
-                  >
-                    Message:
-                  </label>
-                </div>
-                <div className="col-12 col-md-4 me-4">
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows="6"
-                    className="form-control"
-                    value={formData.message}
-                    onChange={onChange}
-                    required
-                  ></textarea>
-                </div>
-
-                <div className="col-12 col-md-8 offset-md-4">
-                  <button
-                    name="submit"
-                    type="submit"
-                    className="btn btn-primary"
-                    disabled={loading}
-                  >
-                    {loading ? "Submitting..." : "Submit"}
-                  </button>
-                </div>
-              </div>
-            </fieldset>
-          </form>
-        </div>
-      </section>
-    </Layout>
+        </section>
+      </Layout>
+    </>
   );
 }
 

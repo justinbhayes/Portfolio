@@ -18,8 +18,9 @@ export const socialLinks = [
 
 export const testimonials = [
   {
-    quote: "Coming soon...",
-    author: "Jim Cramond",
+    quote:
+      "Working with Justin was a great experience. He was responsive, professional, had quick turnaround times, and was wonderful to work with throughout the process. Communication was timely, he provided helpful insights throughout the project, and he did a great job implementing the changes and feedback we provided.",
+    author: "Megan Aber",
     company: "Elite Craft Consulting",
     position: "Co-Founder & Consultant",
   },
