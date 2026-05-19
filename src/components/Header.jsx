@@ -16,7 +16,7 @@ function Header() {
       return <FaLinkedinIn aria-hidden="true" />;
     }
 
-    if (platform === "twitter") {
+    if (platform === "x") {
       return <FaXTwitter aria-hidden="true" />;
     }
 

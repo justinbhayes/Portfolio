@@ -10,9 +10,9 @@ export const socialLinks = [
     alt: "GitHub",
   },
   {
-    platform: "twitter",
-    href: "https://twitter.com/justinbhayes",
-    alt: "Twitter",
+    platform: "x",
+    href: "https://x.com/justinbhayes",
+    alt: "X (formerly Twitter)",
   },
 ];
 

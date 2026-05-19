@@ -20,7 +20,7 @@ function HomePage() {
       sameAs: [
         "https://www.linkedin.com/in/justinbhayes",
         "https://github.com/justinbhayes",
-        "https://twitter.com/justinbhayes",
+        "https://x.com/justinbhayes",
       ],
     },
   ];
@@ -41,11 +41,10 @@ function HomePage() {
             <br />
             <br />
             I&apos;m a web manager and front-end team lead with 19+ years of
-            hands-on experience and 5+ years leading development teams. I
-            specialize in owning a company&apos;s web presence end-to-end
-            &mdash; from roadmap and A/B experimentation to Agile delivery, team
-            leadership, and code deployments &mdash; while staying close to the
-            front end with HTML, CSS, and JavaScript.
+            hands-on experience and 5+ years leading development teams. I help
+            organizations manage and improve their web presence end-to-end, from
+            roadmap and experimentation to Agile delivery, team leadership, and
+            front-end execution.
             <br />
             <br />I care deeply about performance, accessibility, and teams that
             ship work they&apos;re proud of.
@@ -55,9 +54,12 @@ function HomePage() {
         <section className="wideBody panel-elevated">
           <h2>Web Manager and Development Team Lead (Front-End Focus)</h2>
           <p>
-            I partner with organizations that need practical leadership and
-            hands-on execution, from legacy platform modernization to front-end
-            architecture improvements.
+            I partner with organizations that need technical leadership backed
+            by hands-on execution, from modernizing legacy CMS and front-end
+            stacks to improving component architecture, page performance,
+            accessibility, and release workflows. I help teams reduce technical
+            debt, establish stronger development standards, and ship more
+            reliable web experiences.
           </p>
           <p>
             I am currently open to opportunities in website management,
@@ -87,16 +89,23 @@ function HomePage() {
             <h2>What I Help With</h2>
             <ul className="square">
               <li>
-                I own website strategy, execution, and measurable performance.
+                I improve accessibility so websites are easier to use and more
+                inclusive.
               </li>
               <li>
-                I grow teams through coaching, standards, and clear delivery.
+                I strengthen technical SEO through cleaner markup, metadata,
+                site structure, and crawlability.
               </li>
               <li>
-                I modernize websites to reduce debt and boost performance.
+                I turn analytics and experimentation into clearer performance
+                insights and better decisions.
               </li>
               <li>
-                I align design, marketing, and engineering around outcomes.
+                I align design, marketing, and engineering around measurable
+                outcomes.
+              </li>
+              <li>
+                I support teams with coaching, standards, and clearer delivery.
               </li>
             </ul>
           </section>
@@ -105,17 +114,20 @@ function HomePage() {
             <h2>How I Work</h2>
             <ul className="square">
               <li>
-                I prioritize high-impact work across business, users, and tech.
+                I prioritize the highest-impact work across business, user, and
+                technical needs.
               </li>
-              <li>I run predictable Agile delivery from plan to launch.</li>
+              <li>I run predictable Agile delivery from planning to launch.</li>
               <li>
-                I raise quality through architecture, QA, and release rigor.
+                I build quality in through standards, QA, and release
+                discipline.
               </li>
               <li>
                 I stay hands-on in front-end execution while setting direction.
               </li>
               <li>
-                I use experiments and data to drive continuous improvement.
+                I use testing, analytics, and iteration to keep improving over
+                time.
               </li>
             </ul>
           </section>
