@@ -40,32 +40,29 @@ function HomePage() {
             Welcome to my portfolio website!
             <br />
             <br />
-            I&apos;m a passionate, detailed oriented and self-taught front-end
-            web developer with over 19 years&apos; of experience writing HTML,
-            CSS and JavaScript to build and maintain websites and applications.
-            I specialize in mobile-first, responsive website design with a focus
-            on performance, UX, accessibility and search engine optimization.
+            I&apos;m a web manager and front-end team lead with 19+ years of
+            hands-on experience and 5+ years leading development teams. I
+            specialize in owning a company&apos;s web presence end-to-end
+            &mdash; from roadmap and A/B experimentation to Agile delivery, team
+            leadership, and code deployments &mdash; while staying close to the
+            front end with HTML, CSS, and JavaScript.
             <br />
-            <br />
-            I&apos;m an accountable leader and strong communicator with over 5
-            years&apos; experience managing and empowering a team of developers
-            and other technical roles.
+            <br />I care deeply about performance, accessibility, and teams that
+            ship work they&apos;re proud of.
           </>
         }
       >
         <section className="wideBody panel-elevated">
-          <h2>
-            Website Manager, Development Team Lead, and Front-End Developer
-          </h2>
+          <h2>Web Manager and Development Team Lead (Front-End Focus)</h2>
           <p>
             I partner with organizations that need practical leadership and
             hands-on execution, from legacy platform modernization to front-end
             architecture improvements.
           </p>
           <p>
-            I am currently open to opportunities in web management, front-end
-            leadership, developer-focused team environments, and as a freelancer
-            developer.
+            I am currently open to opportunities in website management,
+            front-end leadership, developer-focused team environments, and as a
+            freelance developer.
           </p>
           <div className="homeActions">
             <Link className="homeActionLink" to="/portfolio">
@@ -90,16 +87,16 @@ function HomePage() {
             <h2>What I Help With</h2>
             <ul className="square">
               <li>
-                Legacy modernization: upgrading older sites to modern frameworks
-                while preserving business-critical workflows.
+                I own website strategy, execution, and measurable performance.
               </li>
               <li>
-                Team delivery: improving communication, code quality, and
-                release confidence across projects.
+                I grow teams through coaching, standards, and clear delivery.
               </li>
               <li>
-                UX and performance: building clean, fast interfaces that are
-                easier for users and stakeholders to trust.
+                I modernize websites to reduce debt and boost performance.
+              </li>
+              <li>
+                I align design, marketing, and engineering around outcomes.
               </li>
             </ul>
           </section>
@@ -108,16 +105,17 @@ function HomePage() {
             <h2>How I Work</h2>
             <ul className="square">
               <li>
-                Outcome-focused planning aligned to user needs and business
-                priorities.
+                I prioritize high-impact work across business, users, and tech.
+              </li>
+              <li>I run predictable Agile delivery from plan to launch.</li>
+              <li>
+                I raise quality through architecture, QA, and release rigor.
               </li>
               <li>
-                Maintainable front-end architecture with React, Bootstrap/SCSS,
-                and clear component boundaries.
+                I stay hands-on in front-end execution while setting direction.
               </li>
               <li>
-                Collaboration-first approach with designers, developers, and
-                stakeholders.
+                I use experiments and data to drive continuous improvement.
               </li>
             </ul>
           </section>

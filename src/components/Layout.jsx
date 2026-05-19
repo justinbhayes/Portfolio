@@ -1,5 +1,4 @@
 import Header from "./Header";
-import Testimonials from "./Testimonials";
 import Footer from "./Footer";
 
 function Layout({ intro, children }) {
@@ -11,7 +10,6 @@ function Layout({ intro, children }) {
         <section className="intro">{intro}</section>
         {children}
       </main>
-      <Testimonials />
       <Footer />
     </>
   );

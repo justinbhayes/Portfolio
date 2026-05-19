@@ -1,0 +1,16 @@
+DirectoryIndex index.html
+
+RewriteEngine On
+
+# Redirect HTTP to HTTPS, including reverse proxy/CDN setups.
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# Serve existing files and directories directly.
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# SPA fallback for React Router routes like /404.
+RewriteRule ^ index.html [L]

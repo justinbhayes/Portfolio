@@ -51,16 +51,6 @@ function PortfolioPage() {
             onFocusCapture={() => setIsPaused(true)}
             onBlurCapture={() => setIsPaused(false)}
           >
-            <button
-              id="mycarousel-prev"
-              type="button"
-              className="jcarousel-prev-horizontal"
-              onClick={showPrev}
-              aria-label="Previous project"
-            >
-              <FaChevronLeft aria-hidden="true" />
-            </button>
-
             <ul id="mycarousel">
               <li key={activeItem.title}>
                 <div className="content-column">
@@ -104,18 +94,44 @@ function PortfolioPage() {
                     />
                   </a>
                 </div>
+                {activeItem.testimonial ? (
+                  <div className="portfolio-testimonial">
+                    <p className="portfolio-testimonial-quote">
+                      &ldquo;{activeItem.testimonial.quote}&rdquo;
+                    </p>
+                    <p className="portfolio-testimonial-meta">
+                      {activeItem.testimonial.author}
+                      <br />
+                      {activeItem.testimonial.company}
+                      <br />
+                      {activeItem.testimonial.position}
+                    </p>
+                  </div>
+                ) : null}
               </li>
             </ul>
 
-            <button
-              id="mycarousel-next"
-              type="button"
-              className="jcarousel-next-horizontal"
-              onClick={showNext}
-              aria-label="Next project"
-            >
-              <FaChevronRight aria-hidden="true" />
-            </button>
+            <div className="portfolio-controls" aria-label="Portfolio controls">
+              <button
+                id="mycarousel-prev"
+                type="button"
+                className="jcarousel-prev-horizontal"
+                onClick={showPrev}
+                aria-label="Previous project"
+              >
+                <FaChevronLeft aria-hidden="true" />
+              </button>
+
+              <button
+                id="mycarousel-next"
+                type="button"
+                className="jcarousel-next-horizontal"
+                onClick={showNext}
+                aria-label="Next project"
+              >
+                <FaChevronRight aria-hidden="true" />
+              </button>
+            </div>
           </div>
 
           <div
