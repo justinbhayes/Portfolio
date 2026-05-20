@@ -14,6 +14,7 @@ function NotFoundPage() {
       />
       <Layout intro="Oops! The page you are looking for has been moved or is no longer available.">
         <section className="wideBody panel-elevated">
+          <h1 className="page-title">Page Not Found</h1>
           <p className="fourOfour">
             Use the navigation menu to find the page you are looking for or
             return to the <Link to="/">homepage</Link>.

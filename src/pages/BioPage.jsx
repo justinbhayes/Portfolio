@@ -12,7 +12,7 @@ function BioPage() {
       />
       <Layout intro="Learn more about my background, the work I’ve done, and where I’m headed next.">
         <section className="wideBody panel-elevated">
-          <h2>About Me</h2>
+          <h1 className="page-title">About Me</h1>
           <p>
             I&apos;m a web manager and front-end team lead with 19+ years of
             hands-on experience building and managing websites. I&apos;ve spent

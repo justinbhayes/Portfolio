@@ -70,7 +70,7 @@ function ContactPage() {
       />
       <Layout intro="If you have any questions or comments, feel free to use the form below to contact me.">
         <section className="wideBody panel-elevated">
-          <h2>Contact Me</h2>
+          <h1 className="page-title">Contact Me</h1>
           {note && (
             <div id="note" className="notification_ok">
               {note}

@@ -43,7 +43,7 @@ function PortfolioPage() {
       />
       <Layout intro="Below you can view the portfolio of my most recent work.">
         <section className="wideBody panel-elevated">
-          <h2>My Portfolio</h2>
+          <h1 className="page-title">My Portfolio</h1>
           <div
             className="portfolio-carousel jcarousel-skin-tango"
             onMouseEnter={() => setIsPaused(true)}
@@ -54,7 +54,7 @@ function PortfolioPage() {
             <ul id="mycarousel">
               <li key={activeItem.title}>
                 <div className="content-column">
-                  <h3>{activeItem.title}</h3>
+                  <h2>{activeItem.title}</h2>
                   <p>{activeItem.description}</p>
                   <p>{activeItem.dates}</p>
                   <p>

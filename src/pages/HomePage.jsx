@@ -53,7 +53,9 @@ function HomePage() {
         }
       >
         <section className="wideBody panel-elevated">
-          <h2>Web Manager and Development Team Lead (Front-End Focus)</h2>
+          <h1 className="page-title">
+            Web Manager and Development Team Lead (Front-End Focus)
+          </h1>
           <p>
             I partner with organizations that need technical leadership backed
             by hands-on execution, from modernizing legacy CMS and front-end
