@@ -8,7 +8,7 @@ function BioPage() {
         title="About Justin"
         description="Learn more about Justin B Hayes — web manager, front-end team lead, and developer with 19+ years of experience owning web operations and leading development teams."
         path="/bio"
-        image="/assets/i/justin.jpg"
+        image="/assets/i/justin.webp"
       />
       <Layout intro="Learn more about my background, the work I’ve done, and where I’m headed next.">
         <section className="wideBody panel-elevated">

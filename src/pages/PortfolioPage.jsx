@@ -39,7 +39,7 @@ function PortfolioPage() {
         title="Portfolio"
         description="Browse recent web projects by Justin B Hayes, including consulting websites and interactive React applications."
         path="/portfolio"
-        image="/assets/i/product-finder.png"
+        image="/assets/i/product-finder.webp"
       />
       <Layout intro="Below you can view the portfolio of my most recent work.">
         <section className="wideBody panel-elevated">
@@ -91,6 +91,8 @@ function PortfolioPage() {
                       height="227"
                       alt={activeItem.title}
                       className="thumb"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </a>
                 </div>

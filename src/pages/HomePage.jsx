@@ -31,8 +31,9 @@ function HomePage() {
         title="Web Developer Portfolio"
         description="Justin B Hayes is a front-end developer and website manager specializing in React, modernizing legacy platforms, and building performant, accessible web experiences."
         path="/"
-        image="/assets/i/justin.jpg"
+        image="/assets/i/justin.webp"
         structuredData={structuredData}
+        preloadImage={true}
       />
       <Layout
         intro={

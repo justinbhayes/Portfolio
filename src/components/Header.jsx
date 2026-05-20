@@ -31,7 +31,7 @@ function Header() {
     <header className="header">
       <div id="title">
         <h1>Justin B. Hayes</h1>
-        <h3>Web Manager / Team Lead / Developer</h3>
+        <h2>Web Manager / Team Lead / Developer</h2>
       </div>
 
       <nav id="mainNav" aria-label="Primary navigation">

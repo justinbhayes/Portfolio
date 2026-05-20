@@ -65,7 +65,7 @@ function ContactPage() {
         title="Contact"
         description="Contact Justin B Hayes about front-end development, web management, freelance work, and collaboration opportunities."
         path="/contact"
-        image="/assets/i/justin.jpg"
+        image="/assets/i/justin.webp"
       />
       <Layout intro="If you have any questions or comments, feel free to use the form below to contact me.">
         <section className="wideBody panel-elevated">

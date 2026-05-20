@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 
 const SITE_NAME = "Justin B Hayes";
 const SITE_URL = "https://justinbhayes.com";
-const DEFAULT_IMAGE = "/assets/i/get-elite-consulting.png";
+const DEFAULT_IMAGE = "/assets/i/get-elite-consulting.webp";
 
 function Seo({
   title,
@@ -12,6 +12,7 @@ function Seo({
   type = "website",
   noindex = false,
   structuredData,
+  preloadImage = false,
 }) {
   const canonical = `${SITE_URL}${path}`;
   const fullTitle = title ? `${title} | ${SITE_NAME}` : SITE_NAME;
@@ -36,6 +37,8 @@ function Seo({
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={imageUrl} />
+
+      {preloadImage ? <link rel="preload" as="image" href={imageUrl} /> : null}
 
       {structuredData ? (
         <script type="application/ld+json">
