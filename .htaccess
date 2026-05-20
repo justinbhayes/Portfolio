@@ -1,5 +1,34 @@
 DirectoryIndex index.html
 
+# -------------------------------------------------------
+# Cache Control
+# Vite build outputs hashed filenames for JS/CSS, so
+# those are safe to cache for a full year (immutable).
+# HTML must stay uncached so browsers always get fresh
+# references to the latest hashed asset filenames.
+# -------------------------------------------------------
+<IfModule mod_headers.c>
+  # Hashed JS/CSS assets (e.g. index-CyOHP5u1.js) — 1 year, immutable
+  <FilesMatch "-[A-Za-z0-9_-]{8}\.(js|css)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # Images and favicon — 30 days
+  <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+
+  # HTML — always revalidate so the app shell stays fresh
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+
+  # Sitemap and robots.txt — 1 day
+  <FilesMatch "(sitemap\.xml|robots\.txt)$">
+    Header set Cache-Control "public, max-age=86400"
+  </FilesMatch>
+</IfModule>
+
 RewriteEngine On
 
 # Redirect HTTP to HTTPS, including reverse proxy/CDN setups.

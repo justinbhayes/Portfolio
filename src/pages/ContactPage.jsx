@@ -2,6 +2,7 @@ import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
+import "../styles/bootstrap-theme.scss";
 
 // Initialize EmailJS
 // Get your credentials from https://dashboard.emailjs.com/
