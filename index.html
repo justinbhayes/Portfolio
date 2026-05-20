@@ -10,17 +10,33 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-5043BE890C"
-    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
-      gtag("js", new Date());
-      gtag("config", "G-5043BE890C");
+
+      function loadAnalytics() {
+        if (window.__gaLoaded) {
+          return;
+        }
+        window.__gaLoaded = true;
+
+        const script = document.createElement("script");
+        script.async = true;
+        script.src = "https://www.googletagmanager.com/gtag/js?id=G-5043BE890C";
+        script.onload = function () {
+          gtag("js", new Date());
+          gtag("config", "G-5043BE890C");
+        };
+        document.head.appendChild(script);
+      }
+
+      if ("requestIdleCallback" in window) {
+        window.requestIdleCallback(loadAnalytics, { timeout: 3000 });
+      } else {
+        window.addEventListener("load", loadAnalytics, { once: true });
+      }
     </script>
   </body>
 </html>
