@@ -107,7 +107,7 @@ function BioPage() {
             <ul className="square">
               <li>Staying active in broomball and softball.</li>
               <li>Cheering on the Minnesota Twins, Wild, and Vikings.</li>
-              <li>Riding my motorcycle on sunny days.</li>
+              <li>Riding my motorcycle on warm sunny days.</li>
               <li>Deer hunting in the fall.</li>
             </ul>
           </section>

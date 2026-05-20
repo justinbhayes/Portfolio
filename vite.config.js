@@ -12,28 +12,6 @@ export default defineConfig({
     },
   },
   build: {
-    rollupOptions: {
-      output: {
-        manualChunks(id) {
-          if (
-            id.includes("node_modules/react") ||
-            id.includes("node_modules/react-dom") ||
-            id.includes("node_modules/react-router-dom")
-          ) {
-            return "react";
-          }
-          if (id.includes("node_modules/bootstrap")) {
-            return "bootstrap";
-          }
-          if (id.includes("node_modules/react-icons")) {
-            return "icons";
-          }
-          if (id.includes("node_modules/@emailjs")) {
-            return "email";
-          }
-        },
-      },
-    },
     // Target modern browsers for smaller bundle
     target: "es2020",
   },
