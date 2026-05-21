@@ -47,8 +47,8 @@ function HomePage() {
             roadmap and experimentation to Agile delivery, team leadership, and
             front-end execution.
             <br />
-            <br />I care deeply about performance, accessibility, and teams that
-            ship work they&apos;re proud of.
+            <br />I care deeply about performance, accessibility, SEO, and teams
+            that ship work they&apos;re proud of.
           </>
         }
       >
@@ -107,9 +107,6 @@ function HomePage() {
                 I align design, marketing, and engineering around measurable
                 outcomes.
               </li>
-              <li>
-                I support teams with coaching, standards, and clearer delivery.
-              </li>
             </ul>
           </section>
 
@@ -121,6 +118,9 @@ function HomePage() {
                 technical needs.
               </li>
               <li>I run predictable Agile delivery from planning to launch.</li>
+              <li>
+                I support teams with coaching, standards, and clearer delivery.
+              </li>
               <li>
                 I build quality in through standards, QA, and release
                 discipline.

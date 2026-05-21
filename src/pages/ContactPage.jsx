@@ -1,13 +1,24 @@
 import { useState } from "react";
-import emailjs from "@emailjs/browser";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
 import "../styles/bootstrap-theme.scss";
 
-// Initialize EmailJS
-// Get your credentials from https://dashboard.emailjs.com/
-// PUBLIC_KEY can be found in Account > API Keys
-emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "");
+let emailjsClient;
+let emailjsInitialized = false;
+
+async function getEmailjsClient() {
+  if (!emailjsClient) {
+    const module = await import("@emailjs/browser");
+    emailjsClient = module.default;
+  }
+
+  if (!emailjsInitialized) {
+    emailjsClient.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "");
+    emailjsInitialized = true;
+  }
+
+  return emailjsClient;
+}
 
 const initialForm = {
   name: "",
@@ -33,6 +44,8 @@ function ContactPage() {
     setError("");
 
     try {
+      const emailjs = await getEmailjsClient();
+
       // Send email using EmailJS
       // You need to set up a template in EmailJS dashboard
       await emailjs.send(

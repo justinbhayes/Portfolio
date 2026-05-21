@@ -405,8 +405,8 @@ ul#socialLinks {
 
 .portfolio-carousel .jcarousel-prev-horizontal,
 .portfolio-carousel .jcarousel-next-horizontal {
-  width: 32px;
-  height: 32px;
+  width: 44px;
+  height: 44px;
   padding: 0;
   border: 0;
   border-radius: 999px;
@@ -443,8 +443,8 @@ ul#socialLinks {
 .portfolio-carousel .jcarousel-next-horizontal svg {
   display: block;
   margin: 0 auto;
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
 }
 
 .portfolio-carousel .jcarousel-prev-horizontal svg {
@@ -458,6 +458,10 @@ ul#socialLinks {
 @media (min-width: 768px) {
   .portfolio-carousel {
     padding: 0 48px;
+  }
+
+  .portfolio-carousel #mycarousel {
+    padding: 20px 20px 0;
   }
 
   .portfolio-carousel #mycarousel li {
@@ -476,8 +480,8 @@ ul#socialLinks {
     position: absolute;
     top: 98px;
     right: 0;
-    width: 32px;
-    height: 32px;
+    width: 44px;
+    height: 44px;
     cursor: pointer;
   }
 
@@ -485,8 +489,8 @@ ul#socialLinks {
     position: absolute;
     top: 98px;
     left: 0;
-    width: 32px;
-    height: 32px;
+    width: 44px;
+    height: 44px;
     cursor: pointer;
   }
 
@@ -498,20 +502,39 @@ ul#socialLinks {
 .portfolio-dots {
   display: flex;
   justify-content: center;
-  gap: 8px;
+  gap: 4px;
   margin: 12px 0;
 }
 
 .slider-dot {
-  width: 10px;
-  height: 10px;
-  border: 1px solid #f3f3f3;
-  border-radius: 999px;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 8px;
   background: transparent;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border: 1px solid #f3f3f3;
+    border-radius: 999px;
+    background: transparent;
+  }
+
+  &:focus-visible {
+    outline: 2px solid #ff6;
+    outline-offset: 2px;
+  }
 
   &.is-active {
-    background: #ff6;
+    &::before {
+      background: #ff6;
+    }
   }
 }
 

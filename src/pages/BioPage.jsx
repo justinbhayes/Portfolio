@@ -10,7 +10,7 @@ function BioPage() {
         path="/bio"
         image="/assets/i/justin.webp"
       />
-      <Layout intro="Learn more about my background, the work I’ve done, and where I’m headed next.">
+      <Layout intro="Learn more about my background, the recent work I’ve done, and where I’m headed next.">
         <section className="wideBody panel-elevated">
           <h1 className="page-title">About Me</h1>
           <p>
