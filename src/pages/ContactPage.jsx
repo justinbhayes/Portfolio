@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
-import "../styles/bootstrap-theme.scss";
 
 let emailjsClient;
 let emailjsInitialized = false;
