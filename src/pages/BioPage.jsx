@@ -13,16 +13,28 @@ function BioPage() {
       <Layout intro="Learn more about my background, the recent work I’ve done, and where I’m headed next.">
         <section className="wideBody panel-elevated">
           <h1 className="page-title">About Me</h1>
-          <p>
-            I&apos;m a web manager and front-end team lead with 19+ years of
-            hands-on experience building and managing websites. I&apos;ve spent
-            the last several years owning entire web operations &mdash; from
-            roadmap strategy and A/B experimentation to team leadership and
-            deployments &mdash; while staying close to the front end with HTML,
-            CSS, and JavaScript. I&apos;m a self-taught developer who built a
-            strong technical foundation and grew into a leader who builds
-            collaborative, high-performing teams.
-          </p>
+          <div className="bio-intro-grid">
+            <figure className="bio-photo">
+              <img
+                src="/assets/i/justin.webp"
+                alt="Justin B Hayes"
+                width="300"
+                height="300"
+              />
+            </figure>
+            <div className="bio-intro-copy">
+              <p>
+                I&apos;m a web manager and front-end team lead with 19+ years of
+                hands-on experience building and managing websites. I&apos;ve
+                spent the last several years owning entire web operations
+                &mdash; from roadmap strategy and A/B experimentation to team
+                leadership and deployments &mdash; while staying close to the
+                front end with HTML, CSS, and JavaScript. I&apos;m a self-taught
+                developer who built a strong technical foundation and grew into
+                a leader who builds collaborative, high-performing teams.
+              </p>
+            </div>
+          </div>
         </section>
 
         <section className="wideBody panel-elevated">

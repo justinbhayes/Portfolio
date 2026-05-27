@@ -273,6 +273,60 @@ ul#socialLinks {
   }
 }
 
+.bio-intro-grid {
+  margin-top: 16px;
+}
+
+.bio-photo {
+  margin: 0 0 16px;
+
+  img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    border: 1px solid rgba(232, 239, 245, 0.2);
+  }
+}
+
+.bio-intro-copy {
+  p {
+    margin: 0;
+  }
+}
+
+@media (min-width: 900px) {
+  .bio-intro-grid {
+    display: grid;
+    grid-template-columns: minmax(150px, 150px) minmax(0, 1fr);
+    align-items: center;
+    column-gap: 24px;
+  }
+
+  .bio-photo {
+    margin: 0;
+    max-width: 150px;
+
+    img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+
+  .bio-intro-copy {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    p {
+      width: 100%;
+    }
+  }
+}
+
 .homeActions {
   margin: 12px 0 16px;
   display: flex;
