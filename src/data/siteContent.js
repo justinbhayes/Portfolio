@@ -22,7 +22,7 @@ export const portfolioItems = [
     image: {
       src: "/assets/i/get-elite-consulting-600.webp",
       srcSet:
-        "/assets/i/get-elite-consulting-300.webp 300w, /assets/i/get-elite-consulting-600.webp 600w, /assets/i/get-elite-consulting.webp 1373w",
+        "/assets/i/get-elite-consulting-300.webp 300w, /assets/i/get-elite-consulting-600.webp 600w",
       sizes: "(min-width: 768px) 300px, 100vw",
       width: 1373,
       height: 914,
@@ -44,7 +44,7 @@ export const portfolioItems = [
     image: {
       src: "/assets/i/product-finder-600.webp",
       srcSet:
-        "/assets/i/product-finder-300.webp 300w, /assets/i/product-finder-600.webp 600w, /assets/i/product-finder.webp 1376w",
+        "/assets/i/product-finder-300.webp 300w, /assets/i/product-finder-600.webp 600w",
       sizes: "(min-width: 768px) 300px, 100vw",
       width: 1376,
       height: 892,

@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import Layout from "../components/Layout";
-import Seo from "../components/Seo";
-import { routeSeo } from "../data/seoData";
 import { portfolioItems } from "../data/siteContent";
 
 function ChevronLeftIcon(props) {
@@ -29,10 +27,30 @@ function ChevronRightIcon(props) {
 function PortfolioPage() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [isEnhancementsReady, setIsEnhancementsReady] = useState(false);
   const activeItem = portfolioItems[activeIndex];
 
   useEffect(() => {
-    if (isPaused) {
+    document.title = "Portfolio | Justin B Hayes";
+  }, []);
+
+  useEffect(() => {
+    const enableEnhancements = () => setIsEnhancementsReady(true);
+
+    if ("requestIdleCallback" in window) {
+      const idleId = window.requestIdleCallback(enableEnhancements, {
+        timeout: 1200,
+      });
+
+      return () => window.cancelIdleCallback(idleId);
+    }
+
+    const timer = window.setTimeout(enableEnhancements, 300);
+    return () => window.clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    if (!isEnhancementsReady || isPaused) {
       return undefined;
     }
 
@@ -41,7 +59,7 @@ function PortfolioPage() {
     }, 6000);
 
     return () => window.clearInterval(timer);
-  }, [isPaused]);
+  }, [isEnhancementsReady, isPaused]);
 
   const showPrev = () => {
     setActiveIndex((current) =>
@@ -57,41 +75,31 @@ function PortfolioPage() {
   const isInitialLcpCandidate = activeIndex === 0;
 
   return (
-    <>
-      <Seo {...routeSeo.portfolio} />
-      <Layout intro="Below you can view the portfolio of my most recent work.">
-        <section className="wideBody panel-elevated">
-          <h1 className="page-title">My Portfolio</h1>
-          <div
-            className="portfolio-carousel jcarousel-skin-tango"
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-            onFocusCapture={() => setIsPaused(true)}
-            onBlurCapture={() => setIsPaused(false)}
-          >
-            <ul id="mycarousel">
-              <li key={activeItem.title}>
-                <div className="content-column">
-                  <h2>{activeItem.title}</h2>
-                  <p>{activeItem.description}</p>
-                  <p>{activeItem.dates}</p>
-                  <p>
-                    <a
-                      href={activeItem.href}
-                      target={isInternalPlaceholder ? undefined : "_blank"}
-                      rel={isInternalPlaceholder ? undefined : "noreferrer"}
-                      title={activeItem.title}
-                      onClick={(event) => {
-                        if (isInternalPlaceholder) {
-                          event.preventDefault();
-                        }
-                      }}
-                    >
-                      Visit Website
-                    </a>
-                  </p>
-                </div>
-                <div className="image-column">
+    <Layout intro="Below you can view the portfolio of my most recent work.">
+      <section className="wideBody panel-elevated">
+        <h1 className="page-title">My Portfolio</h1>
+        <div
+          className="portfolio-carousel jcarousel-skin-tango"
+          onMouseEnter={
+            isEnhancementsReady ? () => setIsPaused(true) : undefined
+          }
+          onMouseLeave={
+            isEnhancementsReady ? () => setIsPaused(false) : undefined
+          }
+          onFocusCapture={
+            isEnhancementsReady ? () => setIsPaused(true) : undefined
+          }
+          onBlurCapture={
+            isEnhancementsReady ? () => setIsPaused(false) : undefined
+          }
+        >
+          <ul id="mycarousel">
+            <li key={activeItem.title}>
+              <div className="content-column">
+                <h2>{activeItem.title}</h2>
+                <p>{activeItem.description}</p>
+                <p>{activeItem.dates}</p>
+                <p>
                   <a
                     href={activeItem.href}
                     target={isInternalPlaceholder ? undefined : "_blank"}
@@ -103,37 +111,54 @@ function PortfolioPage() {
                       }
                     }}
                   >
-                    <img
-                      src={activeItem.image.src}
-                      srcSet={activeItem.image.srcSet}
-                      sizes={activeItem.image.sizes}
-                      width={activeItem.image.width}
-                      height={activeItem.image.height}
-                      alt={activeItem.title}
-                      className="thumb"
-                      loading={isInitialLcpCandidate ? "eager" : "lazy"}
-                      fetchPriority={isInitialLcpCandidate ? "high" : "auto"}
-                      decoding={isInitialLcpCandidate ? "sync" : "async"}
-                    />
+                    Visit Website
                   </a>
+                </p>
+              </div>
+              <div className="image-column">
+                <a
+                  href={activeItem.href}
+                  target={isInternalPlaceholder ? undefined : "_blank"}
+                  rel={isInternalPlaceholder ? undefined : "noreferrer"}
+                  title={activeItem.title}
+                  onClick={(event) => {
+                    if (isInternalPlaceholder) {
+                      event.preventDefault();
+                    }
+                  }}
+                >
+                  <img
+                    src={activeItem.image.src}
+                    srcSet={activeItem.image.srcSet}
+                    sizes={activeItem.image.sizes}
+                    width={activeItem.image.width}
+                    height={activeItem.image.height}
+                    alt={activeItem.title}
+                    className="thumb"
+                    loading={isInitialLcpCandidate ? "eager" : "lazy"}
+                    fetchPriority={isInitialLcpCandidate ? "high" : "auto"}
+                    decoding={isInitialLcpCandidate ? "sync" : "async"}
+                  />
+                </a>
+              </div>
+              {activeItem.testimonial ? (
+                <div className="portfolio-testimonial">
+                  <p className="portfolio-testimonial-quote">
+                    &ldquo;{activeItem.testimonial.quote}&rdquo;
+                  </p>
+                  <p className="portfolio-testimonial-meta">
+                    {activeItem.testimonial.author}
+                    <br />
+                    {activeItem.testimonial.company}
+                    <br />
+                    {activeItem.testimonial.position}
+                  </p>
                 </div>
-                {activeItem.testimonial ? (
-                  <div className="portfolio-testimonial">
-                    <p className="portfolio-testimonial-quote">
-                      &ldquo;{activeItem.testimonial.quote}&rdquo;
-                    </p>
-                    <p className="portfolio-testimonial-meta">
-                      {activeItem.testimonial.author}
-                      <br />
-                      {activeItem.testimonial.company}
-                      <br />
-                      {activeItem.testimonial.position}
-                    </p>
-                  </div>
-                ) : null}
-              </li>
-            </ul>
+              ) : null}
+            </li>
+          </ul>
 
+          {isEnhancementsReady ? (
             <div className="portfolio-controls" aria-label="Portfolio controls">
               <button
                 id="mycarousel-prev"
@@ -155,8 +180,10 @@ function PortfolioPage() {
                 <ChevronRightIcon />
               </button>
             </div>
-          </div>
+          ) : null}
+        </div>
 
+        {isEnhancementsReady ? (
           <div
             className="portfolio-dots"
             role="tablist"
@@ -174,9 +201,9 @@ function PortfolioPage() {
               />
             ))}
           </div>
-        </section>
-      </Layout>
-    </>
+        ) : null}
+      </section>
+    </Layout>
   );
 }
 
