@@ -35,6 +35,10 @@ export function buildHeadMarkup(route) {
   const title = buildFullTitle(route.title);
   const canonical = `${SITE_URL}${route.path}`;
   const imageUrl = resolveSeoImageUrl(route.image);
+  const preloadImageUrl = resolveSeoImageUrl(
+    route.preloadImageSrc || (route.preloadImage ? route.image : ""),
+    { fallbackToDefault: false },
+  );
   const headTags = [
     `    <title>${escapeHtml(title)}</title>`,
     `    <meta name="description" content="${escapeHtml(route.description)}" />`,
@@ -67,8 +71,10 @@ export function buildHeadMarkup(route) {
     headTags.push(`    <meta name="twitter:image" content="${imageUrl}" />`);
   }
 
-  if (route.preloadImage && imageUrl) {
-    headTags.push(`    <link rel="preload" as="image" href="${imageUrl}" />`);
+  if (preloadImageUrl) {
+    headTags.push(
+      `    <link rel="preload" as="image" href="${preloadImageUrl}" />`,
+    );
   }
 
   if (route.structuredData) {

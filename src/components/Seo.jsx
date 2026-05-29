@@ -84,12 +84,12 @@ function updateImageMeta(imageUrl) {
   upsertMeta({ name: "twitter:image", content: imageUrl });
 }
 
-function updatePreload(preloadImage, imageUrl) {
+function updatePreload(preloadImageUrl) {
   const existing =
     document.head.querySelector('link[data-seo-preload="true"]') ||
     document.head.querySelector('link[rel="preload"][as="image"]');
 
-  if (!preloadImage || !imageUrl) {
+  if (!preloadImageUrl) {
     if (existing) {
       existing.remove();
     }
@@ -103,7 +103,7 @@ function updatePreload(preloadImage, imageUrl) {
 
   element.setAttribute("rel", "preload");
   element.setAttribute("as", "image");
-  element.setAttribute("href", imageUrl);
+  element.setAttribute("href", preloadImageUrl);
   element.setAttribute("data-seo-preload", "true");
 }
 
@@ -138,10 +138,15 @@ function Seo({
   noindex = false,
   structuredData,
   preloadImage = false,
+  preloadImageSrc = "",
 }) {
   const canonical = `${SITE_URL}${path}`;
   const fullTitle = buildFullTitle(title);
   const imageUrl = resolveSeoImageUrl(image, { fallbackToDefault: false });
+  const preloadImageUrl = resolveSeoImageUrl(
+    preloadImageSrc || (preloadImage ? image : ""),
+    { fallbackToDefault: false },
+  );
 
   useEffect(() => {
     document.title = fullTitle;
@@ -160,7 +165,7 @@ function Seo({
     upsertMeta({ name: "twitter:description", content: description });
 
     updateImageMeta(imageUrl);
-    updatePreload(preloadImage, imageUrl);
+    updatePreload(preloadImageUrl);
     updateStructuredData(structuredData);
   }, [
     canonical,
@@ -169,6 +174,8 @@ function Seo({
     imageUrl,
     noindex,
     preloadImage,
+    preloadImageSrc,
+    preloadImageUrl,
     structuredData,
     type,
   ]);

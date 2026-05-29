@@ -1,9 +1,30 @@
 import { useEffect, useState } from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
 import { routeSeo } from "../data/seoData";
 import { portfolioItems } from "../data/siteContent";
+
+function ChevronLeftIcon(props) {
+  return (
+    <svg viewBox="0 0 320 512" aria-hidden="true" focusable="false" {...props}>
+      <path
+        fill="currentColor"
+        d="M34.5 239l194.3-194.3c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L131.5 256l153.8 154.8c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L34.5 273c-9.4-9.4-9.4-24.6 0-34z"
+      />
+    </svg>
+  );
+}
+
+function ChevronRightIcon(props) {
+  return (
+    <svg viewBox="0 0 320 512" aria-hidden="true" focusable="false" {...props}>
+      <path
+        fill="currentColor"
+        d="M285.5 273L91.2 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9L188.5 256 34.7 101.2c-9.4-9.4-9.4-24.6 0-33.9L57.3 44.7c9.4-9.4 24.6-9.4 33.9 0L285.5 239c9.4 9.4 9.4 24.6 0 34z"
+      />
+    </svg>
+  );
+}
 
 function PortfolioPage() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -33,6 +54,7 @@ function PortfolioPage() {
   };
 
   const isInternalPlaceholder = activeItem.href === "#";
+  const isInitialLcpCandidate = activeIndex === 0;
 
   return (
     <>
@@ -82,13 +104,16 @@ function PortfolioPage() {
                     }}
                   >
                     <img
-                      src={activeItem.image}
-                      width="300"
-                      height="227"
+                      src={activeItem.image.src}
+                      srcSet={activeItem.image.srcSet}
+                      sizes={activeItem.image.sizes}
+                      width={activeItem.image.width}
+                      height={activeItem.image.height}
                       alt={activeItem.title}
                       className="thumb"
-                      loading="lazy"
-                      decoding="async"
+                      loading={isInitialLcpCandidate ? "eager" : "lazy"}
+                      fetchPriority={isInitialLcpCandidate ? "high" : "auto"}
+                      decoding={isInitialLcpCandidate ? "sync" : "async"}
                     />
                   </a>
                 </div>
@@ -117,7 +142,7 @@ function PortfolioPage() {
                 onClick={showPrev}
                 aria-label="Previous project"
               >
-                <FaChevronLeft aria-hidden="true" />
+                <ChevronLeftIcon />
               </button>
 
               <button
@@ -127,7 +152,7 @@ function PortfolioPage() {
                 onClick={showNext}
                 aria-label="Next project"
               >
-                <FaChevronRight aria-hidden="true" />
+                <ChevronRightIcon />
               </button>
             </div>
           </div>

@@ -46,7 +46,6 @@ export const routeSeo = {
         ],
       },
     ],
-    preloadImage: true,
   },
   bio: {
     title: "About Justin",
@@ -61,6 +60,7 @@ export const routeSeo = {
       "Browse recent web projects by Justin B Hayes, including consulting websites and interactive React applications.",
     path: "/portfolio/",
     image: "/assets/i/product-finder.webp",
+    preloadImageSrc: "/assets/i/get-elite-consulting-600.webp",
   },
   contact: {
     title: "Contact",

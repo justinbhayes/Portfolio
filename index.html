@@ -5,7 +5,6 @@
     <link rel="icon" type="image/x-icon" href="/assets/i/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web Developer Portfolio | Justin B Hayes</title>
-    <link rel="preconnect" href="https://www.googletagmanager.com" />
   </head>
   <body>
     <div id="root"></div>
@@ -32,11 +31,25 @@
         document.head.appendChild(script);
       }
 
-      if ("requestIdleCallback" in window) {
-        window.requestIdleCallback(loadAnalytics, { timeout: 3000 });
-      } else {
-        window.addEventListener("load", loadAnalytics, { once: true });
+      function scheduleAnalyticsLoad() {
+        const run = function () {
+          if ("requestIdleCallback" in window) {
+            window.requestIdleCallback(loadAnalytics, { timeout: 4000 });
+            return;
+          }
+
+          setTimeout(loadAnalytics, 4000);
+        };
+
+        if (document.readyState === "complete") {
+          run();
+          return;
+        }
+
+        window.addEventListener("load", run, { once: true });
       }
+
+      scheduleAnalyticsLoad();
     </script>
   </body>
 </html>
