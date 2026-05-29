@@ -1,15 +1,11 @@
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
+import { routeSeo } from "../data/seoData";
 
 function BioPage() {
   return (
     <>
-      <Seo
-        title="About Justin"
-        description="Learn more about Justin B Hayes — web manager, front-end team lead, and developer with 19+ years of experience owning web operations and leading development teams."
-        path="/bio"
-        image="/assets/i/justin.webp"
-      />
+      <Seo {...routeSeo.bio} />
       <Layout intro="Learn more about my background, the recent work I’ve done, and where I’m headed next.">
         <section className="wideBody panel-elevated">
           <h1 className="page-title">About Me</h1>

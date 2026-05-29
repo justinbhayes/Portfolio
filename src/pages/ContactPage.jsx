@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
+import { routeSeo } from "../data/seoData";
 
 let emailjsClient;
 let emailjsInitialized = false;
@@ -74,12 +75,7 @@ function ContactPage() {
 
   return (
     <>
-      <Seo
-        title="Contact"
-        description="Contact Justin B Hayes about front-end development, web management, freelance work, and collaboration opportunities."
-        path="/contact"
-        image="/assets/i/justin.webp"
-      />
+      <Seo {...routeSeo.contact} />
       <Layout intro="If you have any questions or comments, feel free to use the form below to contact me.">
         <section className="wideBody panel-elevated">
           <h1 className="page-title">Contact Me</h1>

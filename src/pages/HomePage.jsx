@@ -1,40 +1,12 @@
 import { Link } from "react-router-dom";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
+import { routeSeo } from "../data/seoData";
 
 function HomePage() {
-  const structuredData = [
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      name: "Justin B Hayes",
-      url: "https://justinbhayes.com/",
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      name: "Justin B Hayes",
-      url: "https://justinbhayes.com/",
-      jobTitle:
-        "Website Manager, Development Team Lead, and Front-End Developer",
-      sameAs: [
-        "https://www.linkedin.com/in/justinbhayes",
-        "https://github.com/justinbhayes",
-        "https://x.com/justinbhayes",
-      ],
-    },
-  ];
-
   return (
     <>
-      <Seo
-        title="Web Developer Portfolio"
-        description="Justin B Hayes is a front-end developer and website manager specializing in React, modernizing legacy platforms, and building performant, accessible web experiences."
-        path="/"
-        image="/assets/i/justin.webp"
-        structuredData={structuredData}
-        preloadImage={true}
-      />
+      <Seo {...routeSeo.home} />
       <Layout
         intro={
           <>
@@ -92,19 +64,19 @@ function HomePage() {
             <h2>What I Help With</h2>
             <ul className="square">
               <li>
-                I improve accessibility so websites are easier to use and more
+                Improve accessibility so websites are easier to use and more
                 inclusive.
               </li>
               <li>
-                I strengthen technical SEO through cleaner markup, metadata,
-                site structure, and crawlability.
+                Strengthen technical SEO through cleaner markup, metadata, site
+                structure, and crawlability.
               </li>
               <li>
-                I turn analytics and experimentation into clearer performance
+                Turn analytics and experimentation into clearer performance
                 insights and better decisions.
               </li>
               <li>
-                I align design, marketing, and engineering around measurable
+                Align design, marketing, and engineering around measurable
                 outcomes.
               </li>
             </ul>
@@ -114,22 +86,21 @@ function HomePage() {
             <h2>How I Work</h2>
             <ul className="square">
               <li>
-                I prioritize the highest-impact work across business, user, and
+                Prioritize the highest-impact work across business, user, and
                 technical needs.
               </li>
-              <li>I run predictable Agile delivery from planning to launch.</li>
+              <li>Run predictable Agile delivery from planning to launch.</li>
               <li>
-                I support teams with coaching, standards, and clearer delivery.
+                Support teams with coaching, standards, and clearer delivery.
               </li>
               <li>
-                I build quality in through standards, QA, and release
-                discipline.
+                Build quality in through standards, QA, and release discipline.
               </li>
               <li>
-                I stay hands-on in front-end execution while setting direction.
+                Stay hands-on in front-end execution while setting direction.
               </li>
               <li>
-                I use testing, analytics, and iteration to keep improving over
+                Use testing, analytics, and iteration to keep improving over
                 time.
               </li>
             </ul>

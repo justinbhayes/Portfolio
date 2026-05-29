@@ -43,6 +43,8 @@ Unknown routes redirect to `/404`.
 npm run build
 ```
 
+The build now prerenders route-specific HTML files in `dist`, so `View Source` on deployed pages includes each page's own title and meta tags.
+
 Preview the production build locally:
 
 ```bash

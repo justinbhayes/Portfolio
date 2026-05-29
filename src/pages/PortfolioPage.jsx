@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
+import { routeSeo } from "../data/seoData";
 import { portfolioItems } from "../data/siteContent";
 
 function PortfolioPage() {
@@ -35,12 +36,7 @@ function PortfolioPage() {
 
   return (
     <>
-      <Seo
-        title="Portfolio"
-        description="Browse recent web projects by Justin B Hayes, including consulting websites and interactive React applications."
-        path="/portfolio"
-        image="/assets/i/product-finder.webp"
-      />
+      <Seo {...routeSeo.portfolio} />
       <Layout intro="Below you can view the portfolio of my most recent work.">
         <section className="wideBody panel-elevated">
           <h1 className="page-title">My Portfolio</h1>

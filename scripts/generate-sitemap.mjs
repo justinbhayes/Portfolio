@@ -2,16 +2,18 @@ import { execSync } from "node:child_process";
 import { writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 
+import { seoRoutes } from "../src/data/seoData.js";
+
 const SITE_URL = "https://justinbhayes.com";
 const OUTPUT_PATH = resolve("public", "sitemap.xml");
 const BUILD_INFO_PATH = resolve("src", "data", "buildInfo.js");
 
-const routes = [
-  { path: "/", source: "src/pages/HomePage.jsx" },
-  { path: "/portfolio", source: "src/pages/PortfolioPage.jsx" },
-  { path: "/bio", source: "src/pages/BioPage.jsx" },
-  { path: "/contact", source: "src/pages/ContactPage.jsx" },
-];
+const routeSources = {
+  "/": "src/pages/HomePage.jsx",
+  "/portfolio": "src/pages/PortfolioPage.jsx",
+  "/bio": "src/pages/BioPage.jsx",
+  "/contact": "src/pages/ContactPage.jsx",
+};
 
 function getGitDate(targetPath) {
   try {
@@ -34,8 +36,10 @@ function getGitIsoDate() {
 
 const fallbackDate = getGitDate(null) || new Date().toISOString().slice(0, 10);
 
-const urls = routes
-  .map(({ path, source }) => {
+const urls = seoRoutes
+  .filter(({ noindex }) => !noindex)
+  .map(({ path }) => {
+    const source = routeSources[path];
     const lastmod = getGitDate(source) || fallbackDate;
     return [
       "  <url>",
