@@ -5,9 +5,9 @@ import { socialLinks } from "../data/siteContent";
 
 const navItems = [
   { to: "/", label: "Home", end: true },
-  { to: "/portfolio", label: "Portfolio" },
-  { to: "/bio", label: "Bio" },
-  { to: "/contact", label: "Contact" },
+  { to: "/portfolio/", label: "Portfolio" },
+  { to: "/bio/", label: "Bio" },
+  { to: "/contact/", label: "Contact" },
 ];
 
 function Header() {

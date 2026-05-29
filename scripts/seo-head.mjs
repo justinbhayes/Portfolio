@@ -10,6 +10,14 @@ const routeSeoByPath = new Map(
   Object.values(routeSeo).map((route) => [route.path, route]),
 );
 
+function normalizePathname(pathname) {
+  if (!pathname || pathname === "/") {
+    return "/";
+  }
+
+  return pathname.endsWith("/") ? pathname : `${pathname}/`;
+}
+
 function escapeHtml(value) {
   return value
     .replaceAll("&", "&amp;")
@@ -19,7 +27,8 @@ function escapeHtml(value) {
 }
 
 export function resolveRouteSeo(pathname) {
-  return routeSeoByPath.get(pathname) || routeSeo.notFound;
+  const normalizedPath = normalizePathname(pathname);
+  return routeSeoByPath.get(normalizedPath) || routeSeo.notFound;
 }
 
 export function buildHeadMarkup(route) {

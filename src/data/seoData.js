@@ -52,28 +52,28 @@ export const routeSeo = {
     title: "About Justin",
     description:
       "Learn more about Justin B Hayes — web manager, front-end team lead, and developer with 19+ years of experience owning web operations and leading development teams.",
-    path: "/bio",
+    path: "/bio/",
     image: "/assets/i/justin.webp",
   },
   portfolio: {
     title: "Portfolio",
     description:
       "Browse recent web projects by Justin B Hayes, including consulting websites and interactive React applications.",
-    path: "/portfolio",
+    path: "/portfolio/",
     image: "/assets/i/product-finder.webp",
   },
   contact: {
     title: "Contact",
     description:
       "Contact Justin B Hayes about front-end development, web management, freelance work, and collaboration opportunities.",
-    path: "/contact",
+    path: "/contact/",
     image: "/assets/i/justin.webp",
   },
   notFound: {
     title: "Page Not Found",
     description:
       "The page you requested could not be found. Browse available pages on justinbhayes.com.",
-    path: "/404",
+    path: "/404/",
     image: "",
     noindex: true,
   },

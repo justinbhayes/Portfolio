@@ -10,9 +10,9 @@ const BUILD_INFO_PATH = resolve("src", "data", "buildInfo.js");
 
 const routeSources = {
   "/": "src/pages/HomePage.jsx",
-  "/portfolio": "src/pages/PortfolioPage.jsx",
-  "/bio": "src/pages/BioPage.jsx",
-  "/contact": "src/pages/ContactPage.jsx",
+  "/portfolio/": "src/pages/PortfolioPage.jsx",
+  "/bio/": "src/pages/BioPage.jsx",
+  "/contact/": "src/pages/ContactPage.jsx",
 };
 
 function getGitDate(targetPath) {

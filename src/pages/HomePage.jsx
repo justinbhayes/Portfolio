@@ -42,10 +42,10 @@ function HomePage() {
             freelance developer.
           </p>
           <div className="homeActions">
-            <Link className="homeActionLink" to="/portfolio">
+            <Link className="homeActionLink" to="/portfolio/">
               View Portfolio
             </Link>
-            <Link className="homeActionLink" to="/contact">
+            <Link className="homeActionLink" to="/contact/">
               Contact Me
             </Link>
             <a
