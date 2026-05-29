@@ -34,19 +34,39 @@
       function scheduleAnalyticsLoad() {
         const run = function () {
           if ("requestIdleCallback" in window) {
-            window.requestIdleCallback(loadAnalytics, { timeout: 4000 });
+            window.requestIdleCallback(loadAnalytics, { timeout: 2000 });
             return;
           }
 
-          setTimeout(loadAnalytics, 4000);
+          setTimeout(loadAnalytics, 0);
         };
 
-        if (document.readyState === "complete") {
-          run();
-          return;
-        }
+        const interactionEvents = [
+          "pointerdown",
+          "keydown",
+          "scroll",
+          "touchstart",
+        ];
 
-        window.addEventListener("load", run, { once: true });
+        const onFirstInteraction = function () {
+          interactionEvents.forEach((eventName) => {
+            window.removeEventListener(eventName, onFirstInteraction, {
+              passive: true,
+            });
+          });
+          run();
+        };
+
+        interactionEvents.forEach((eventName) => {
+          window.addEventListener(eventName, onFirstInteraction, {
+            once: true,
+            passive: true,
+          });
+        });
+
+        // Keep analytics for very long passive sessions without pulling it into
+        // the initial critical path.
+        setTimeout(run, 30000);
       }
 
       scheduleAnalyticsLoad();

@@ -2,9 +2,9 @@ import { lazy, Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 
 import HomePage from "./pages/HomePage";
+import PortfolioPage from "./pages/PortfolioPage";
 const BioPage = lazy(() => import("./pages/BioPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
-const PortfolioPage = lazy(() => import("./pages/PortfolioPage"));
 const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
 
 function App() {
