@@ -20,8 +20,17 @@ function HomePage() {
           roadmap and experimentation to Agile delivery, team leadership, and
           front-end execution.
           <br />
-          <br />I care deeply about performance, accessibility, SEO, and teams
-          that ship work they&apos;re proud of.
+          <br />I care deeply about performance, accessibility, best practices
+          and SEO. (
+          <a
+            href="https://pagespeed.web.dev/analysis/https-justinbhayes-com/ouysta97qq?form_factor=mobile"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="View latest Lighthouse mobile report on PageSpeed Insights"
+          >
+            View latest Lighthouse mobile report
+          </a>
+          )
         </>
       }
     >
