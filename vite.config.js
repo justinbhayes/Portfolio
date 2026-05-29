@@ -5,6 +5,7 @@ import { renderRouteHtml, resolveRouteSeo } from "./scripts/seo-head.mjs";
 function routeSeoPlugin() {
   return {
     name: "route-seo-html",
+    apply: "serve",
     transformIndexHtml(html, context) {
       const requestUrl = context?.originalUrl || context?.path;
       const pathname = requestUrl
