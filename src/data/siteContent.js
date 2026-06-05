@@ -18,6 +18,21 @@ export const socialLinks = [
 
 export const portfolioItems = [
   {
+    title: "Home to Sweet Home",
+    image: {
+      src: "/assets/i/home-to-sweet-home-600.webp",
+      srcSet:
+        "/assets/i/home-to-sweet-home-300.webp 300w, /assets/i/home-to-sweet-home-600.webp 600w",
+      sizes: "(min-width: 768px) 300px, 100vw",
+      width: 1301,
+      height: 914,
+    },
+    href: "https://hometosweethome.com/",
+    description:
+      "Designed and developed a modern, fully accessible WordPress website optimized for local SEO, performance, and clear calls-to-action. The new design more effectively guides users through enhanced service explanations, drastically improving the client-acquisition funnel for families, partners, and referral networks.",
+    dates: "April 2026 - June 2026",
+  },
+  {
     title: "Elite Craft Consulting",
     image: {
       src: "/assets/i/get-elite-consulting-600.webp",
