@@ -15,7 +15,7 @@ function HomePage() {
           <br />
           <br />
           I&apos;m a web manager and front-end team lead with 19+ years of
-          hands-on experience and 5+ years leading development teams. I help
+          hands-on experience and 8 years leading development teams. I help
           organizations manage and improve their web presence end-to-end, from
           roadmap and experimentation to Agile delivery, team leadership, and
           front-end execution.
