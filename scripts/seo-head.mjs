@@ -73,7 +73,7 @@ export function buildHeadMarkup(route) {
 
   if (preloadImageUrl) {
     headTags.push(
-      `    <link rel="preload" as="image" href="${preloadImageUrl}" />`,
+      `    <link rel="preload" as="image" href="${preloadImageUrl}" data-seo-preload="true" />`,
     );
   }
 

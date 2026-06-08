@@ -1,6 +1,6 @@
 export const SITE_NAME = "Justin B Hayes";
 export const SITE_URL = "https://justinbhayes.com";
-export const DEFAULT_IMAGE = "/assets/i/get-elite-consulting.webp";
+export const DEFAULT_IMAGE = "/assets/i/justin.webp";
 
 export function buildFullTitle(title) {
   return title ? `${title} | ${SITE_NAME}` : SITE_NAME;
@@ -59,8 +59,8 @@ export const routeSeo = {
     description:
       "Browse recent web projects by Justin B Hayes, including consulting websites and interactive React applications.",
     path: "/portfolio/",
-    image: "/assets/i/product-finder.webp",
-    preloadImageSrc: "/assets/i/get-elite-consulting-600.webp",
+    image: "/assets/i/home-to-sweet-home.webp",
+    preloadImageSrc: "/assets/i/home-to-sweet-home-600.webp",
   },
   contact: {
     title: "Contact",
