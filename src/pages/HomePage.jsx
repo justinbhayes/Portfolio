@@ -22,7 +22,7 @@ function HomePage() {
             <br />I care deeply about performance, accessibility, best practices
             and SEO. (
             <a
-              href="https://pagespeed.web.dev/analysis/https-justinbhayes-com/kowjqpzb28?form_factor=mobile"
+              href="https://pagespeed.web.dev/analysis/https-justinbhayes-com/6ynr83byr2?form_factor=mobile"
               target="_blank"
               rel="noreferrer"
               aria-label="View latest Lighthouse mobile report on PageSpeed Insights"
