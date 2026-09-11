@@ -1,0 +1,18 @@
+# Justin B Hayes
+
+> Justin B Hayes is a front-end developer, website manager, and development team lead specializing in React, modernizing legacy platforms, and building performant, accessible web experiences.
+
+Justin's website contains information about his experience, selected web projects, and ways to get in touch about development, web management, freelance work, and collaboration.
+
+## Site Pages
+
+- [Home](https://justinbhayes.com/): Overview of Justin's web development and website management work.
+- [About Justin](https://justinbhayes.com/bio/): Professional background, experience, and skills.
+- [Portfolio](https://justinbhayes.com/portfolio/): Selected recent web projects and case-study details.
+- [Contact](https://justinbhayes.com/contact/): Contact information and collaboration inquiries.
+
+## External Profiles
+
+- [GitHub](https://github.com/justinbhayes)
+- [LinkedIn](https://www.linkedin.com/in/justinbhayes)
+- [X](https://x.com/justinbhayes)

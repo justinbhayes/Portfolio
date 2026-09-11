@@ -35,6 +35,34 @@ function BioPage() {
 
         <section className="wideBody panel-elevated">
           <h2>Recent Work Experience</h2>
+          <h3>Website Strategist &mdash; HealthPartners</h3>
+          <p className="position-details">
+            Bloomington, MN &middot; July 2026 &ndash; Current
+          </p>
+          <ul className="square">
+            <li>
+              Supports development and execution of web channel strategy and
+              roadmap, aligning work to business goals and customer experience
+              priorities
+            </li>
+            <li>
+              Coordinates intake, prioritization, and planning for website
+              initiatives, ensuring alignment with strategy, capacity, and
+              stakeholder needs
+            </li>
+            <li>
+              Partners with UX, content, marketing, and technology teams to
+              support delivery and ensure work aligns with website strategy
+            </li>
+            <li>
+              Monitors website performance metrics and contributes insights
+              using analytics, user feedback, and testing
+            </li>
+            <li>
+              Contributes to website governance practices, including content
+              standards and quality expectations
+            </li>
+          </ul>
           <h3>Web Manager &mdash; Sense</h3>
           <p className="position-details">
             Cambridge, MA &middot; October 2023 &ndash; December 2025
