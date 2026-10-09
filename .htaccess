@@ -41,5 +41,9 @@ RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
+# No AI catalog is published; return a real 404 instead of the SPA shell
+# (HTML served as ai-catalog.json fails ARD schema validation).
+RewriteRule ^(\.well-known/)?ai-catalog\.json$ - [R=404,L]
+
 # SPA fallback for React Router routes like /404.
 RewriteRule ^ index.html [L]
