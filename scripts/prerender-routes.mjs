@@ -1,4 +1,4 @@
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 
 import { seoRoutes } from "../src/data/seoData.js";
@@ -16,7 +16,22 @@ function resolveOutputPath(routePath) {
   return resolve(DIST_DIR, relativePath, "index.html");
 }
 
-const template = readFileSync(TEMPLATE_PATH, "utf8");
+// Inline the (small) stylesheet so it doesn't block first render.
+function inlineStylesheets(html) {
+  return html.replace(
+    /<link rel="stylesheet"[^>]*href="(\/assets\/[^"]+\.css)"[^>]*>/g,
+    (tag, href) => {
+      const cssPath = resolve(DIST_DIR, href.replace(/^\//, ""));
+      if (!existsSync(cssPath)) {
+        return tag;
+      }
+      const css = readFileSync(cssPath, "utf8").replace(/<\/style/gi, "<\\/style");
+      return `<style>${css}</style>`;
+    },
+  );
+}
+
+const template = inlineStylesheets(readFileSync(TEMPLATE_PATH, "utf8"));
 
 for (const route of seoRoutes) {
   const outputPath = resolveOutputPath(route.path);
